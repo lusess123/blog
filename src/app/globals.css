@@ -16,7 +16,7 @@
   }
 }
 .markdown-body li::marker {
-  content: "● ";
+  content: "●  ";
   font-size: 8px;
 
 }
