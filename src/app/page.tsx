@@ -9,20 +9,31 @@ import rehypeRaw from 'rehype-raw'
 import fs from 'fs'
 import { join } from 'path'
 
-export default  function Home({ params : { x }} : any) {
+export default  function Home(props: any) {
+  console.log('props:', props)
+  let xd 
+  if(!(props?.params?.x)) {
   const mdPath  = join(process.cwd(), 'blogs/read-daily/2023年12月.md')
-  console.log('mdPath:', mdPath)
+  console.log('mdPath render:', mdPath)
   const md = fs.readFileSync(mdPath, 'utf8')
-  console.log('md:', md)
+  // console.log('md:', md)
+  xd = md 
+  } else {
+    xd = props?.params?.x
+  }
   return (
       <div>
       <ReactMarkdown  className="markdown-body"
       rehypePlugins={[rehypeRaw]}
       remarkPlugins={[[remarkGfm,{ singleTilde: false }]]}>
-        {md}
+        {xd}
         </ReactMarkdown>
       </div>
   )
+}
+export function generateStaticParams() {
+  console.log('-------generateStaticParams---------')
+  return []
 }
 
 // export function generateStaticParams() {

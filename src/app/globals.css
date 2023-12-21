@@ -15,27 +15,10 @@
     padding: 15px;
   }
 }
+.markdown-body li::marker {
+  content: "● ";
+  font-size: 8px;
 
-.markdown-body {
-  @apply text-lg leading-relaxed;
-}
-
-.markdown-body p,
-.markdown-body ul,
-.markdown-body ol,
-.markdown-body li::before {
-  content: "•"; /* 使用自定义字符作为圆点 */
-  font-size: 18px; /* 设置圆点大小 */
-  margin-right: 5px; /* 设置圆点与文本之间的间距 */
-}
-.markdown-body blockquote {
-  @apply my-6;
 }
 
-.markdown-body h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
-}
 
-.markdown-body h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
-}
