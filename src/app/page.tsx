@@ -13,7 +13,7 @@ export default  function Home(props: any) {
   console.log('props:', props)
   let xd 
   if(!(props?.params?.x)) {
-  const mdPath  = join(process.cwd(), 'blogs/read-daily/2023年12月.md')
+  const mdPath  = join(process.cwd(), 'blogs/read-daily/2024年01月.md')
   console.log('mdPath render:', mdPath)
   const md = fs.readFileSync(mdPath, 'utf8')
   // console.log('md:', md)
