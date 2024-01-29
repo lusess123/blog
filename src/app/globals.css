@@ -15,10 +15,10 @@
     padding: 15px;
   }
 }
-.markdown-body li::marker {
+/* .markdown-body li::marker {
   content: "●  ";
   font-size: 8px;
 
-}
+} */
 
 

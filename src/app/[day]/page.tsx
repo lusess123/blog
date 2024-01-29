@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 // 支持gfm语法 简单理解就是平时书写md文档的语法
 import remarkGfm from 'remark-gfm';
 // md文档所需要的样式，例如表格的线条等等
-import 'github-markdown-css';
+// import 'github-markdown-css';
 import rehypeRaw from 'rehype-raw'
 import fs from 'fs'
 import path, { join } from 'path'

@@ -17,7 +17,9 @@ section {
     display: block
 }
 
-
+.page-title {
+    color : rgb(100, 86, 71)
+}
 
 ul,
 ol {
@@ -116,15 +118,15 @@ ul.news-list {
     -moz-transition: all 200ms;
     -webkit-transition: all 200ms;
     transition: all 200ms;
-    background-color: rgb(0, 64, 255);
+    background-color: rgb(100, 86, 71);
     -moz-transform: scaleY(0);
     -ms-transform: scaleY(0);
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
     z-index: 1;
-    background-image: -moz-linear-gradient(left, rgb(0, 64, 255) 0%, rgb(0, 64, 255) 100%);
-    background-image: -webkit-linear-gradient(left, rgb(0, 64, 255) 0%, rgb(0, 64, 255) 100%);
-    background-image: linear-gradient(to right, rgb(0, 64, 255) 0%, rgb(0, 64, 255) 100%)
+    background-image: -moz-linear-gradient(left, rgb(100, 86, 71) 0%, rgb(100, 86, 71) 100%);
+    background-image: -webkit-linear-gradient(left, rgb(100, 86, 71) 0%, rgb(100, 86, 71) 100%);
+    background-image: linear-gradient(to right, rgb(100, 86, 71) 0%, rgb(100, 86, 71)100%)
 }
 .info-list>ul li .gradient-hover.gradient-1 {
     top: 0;

@@ -25,7 +25,7 @@ export default async function Home() {
   const list = await getList()
   return (
     <div>
-       <div className='text-center mt-9   text-blue-500 text-3xl font-bold '>每日阅读</div>
+       <div className='text-center mt-9   page-title text-3xl font-bold '>每日阅读</div>
 
     <section className="info-list gray">
      
