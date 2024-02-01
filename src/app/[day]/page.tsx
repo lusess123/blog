@@ -10,6 +10,7 @@ import fs from 'fs'
 import path, { join } from 'path'
 import { getList, formatDateString   } from "../../util/file-util"
 import './day.scss'
+import parse from 'html-react-parser';
 
 export default function Home(props: any) {
     // console.log('props:', props)
