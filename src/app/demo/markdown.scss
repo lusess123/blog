@@ -1,0 +1,92 @@
+.markdown {
+    display: block,
+
+    /* 标题样式 */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 12px;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.25em;
+    }
+
+    /* 段落样式 */
+    p {
+        margin-top: 0;
+    }
+
+    /* 链接样式 */
+    a {
+        color: #0366d6;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* 代码块样式 */
+    pre,
+    code {
+        font-family: 'Courier New', monospace;
+        background-color: hsl(0, 4%, 5%);
+        padding: 2px;
+    }
+
+    pre {
+        padding: 8px;
+        width: 100%;
+        overflow: auto;
+        line-height: 1.45;
+        border-radius: 3px;
+        white-space: pre-wrap;
+        /* CSS3 */
+        white-space: -moz-pre-wrap;
+        /* Firefox */
+        white-space: -pre-wrap;
+        /* Opera <7 */
+        white-space: -o-pre-wrap;
+        /* Opera 7 */
+        word-wrap: break-word;
+        /* 较旧的浏览器 */
+
+
+
+    }
+
+    /* 列表样式 */
+    ul,
+    ol {
+        padding-left: 20px;
+    }
+
+    /* 引用样式 */
+    blockquote {
+        border-left: 4px solid #ddd;
+        padding-left: 16px;
+        margin-left: 0;
+        color: #777;
+    }
+
+    /* 图片样式 */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+}

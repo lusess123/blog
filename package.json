@@ -9,14 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "ahooks": "^3.7.9",
     "axios": "^1.6.7",
     "github-markdown-css": "^5.5.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
+    "rehype-katex": "^7.0.0",
     "rehype-raw": "^7.0.0",
-    "remark-gfm": "^4.0.0"
+    "rehype-stringify": "^10.0.0",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-html": "^16.0.1",
+    "remark-math": "^6.0.0",
+    "remark-rehype": "^11.0.0",
+    "socket.io-client": "^4.7.4",
+    "unified": "^11.0.4"
   },
   "devDependencies": {
     "@types/node": "^20",
