@@ -164,8 +164,9 @@ export default function Chat() {
         <div className='flex-1 overflow-auto pb-[40px] pt-[12px] h-[100%]'>
             <ul className="chat-thread h-[100%] whitespace-normal " ref={ref => elem.current = ref}>
                 {
-                    history.map(item => {
-                        const fun = ItemDict[item[2]]
+                    history.map((item : any) => {
+                        const name = (item[2])
+                        const fun = ItemDict[name as "thinking"] 
                         return <li key={item[0]} className={' chat-thread-li ' + (item[2] === 'thinking' ? 'ai' : item[2])}>
                             <div className="avatar"></div>
                             {fun ? (fun(item[1])) : <div className='markdown' dangerouslySetInnerHTML={{ __html: item[1] }} />}
