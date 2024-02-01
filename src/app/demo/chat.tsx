@@ -179,13 +179,13 @@ export default function Chat() {
         <div className='h-16 pb-40 flex justify-center items-center'>
             <div className="chat-window flex ">
                 <input
-                    onCompositionStart={(e) => {
+                    onCompositionStart={(e : any) => {
                         e.target["composing"] = true
                     }}
-                    onCompositionEnd={(e) => {
+                    onCompositionEnd={(e: any) => {
                         e.target["composing"] = false
                     }}
-                    onKeyDown={(event) => {
+                    onKeyDown={(event: any) => {
                         if (event.key === 'Enter' && !event.target["composing"]) {
                             send()
                         }
