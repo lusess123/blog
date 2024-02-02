@@ -4,7 +4,7 @@ import { useRequest } from 'ahooks'
 import axios from 'axios'
 import './chat.scss'
 import io from 'socket.io-client';
-import MarkDown from './markdown'
+// import MarkDown from './markdown'
 import markdownToHtml from './markdownToHtml'
 import './markdown.scss'
 
