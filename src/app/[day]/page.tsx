@@ -21,7 +21,7 @@ export default function Home(props: any) {
         console.log('mdPath render:', mdPath)
         const md = fs.readFileSync(mdPath, 'utf8')
         // console.log('md:', md)
-        xd = md.replaceAll('https://cdn.nlark.com', '//:file.zyking.xyz/api?url=https://cdn.nlark.com')
+        xd = md.replaceAll('https://cdn.nlark.com', 'https://file.zyking.xyz/api?url=https://cdn.nlark.com')
     } else {
         xd = props?.params?.x
     }
