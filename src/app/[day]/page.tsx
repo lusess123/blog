@@ -28,12 +28,18 @@ export default function Home(props: any) {
     return (
         <div className='day-page'>
             <ReactMarkdown className="markdown-body"
+                components={{"img": ImageComponent as any}}
                 rehypePlugins={[rehypeRaw]}
                 remarkPlugins={[[remarkGfm, { singleTilde: false }]]}>
                 {xd}
             </ReactMarkdown>
         </div>
     )
+}
+
+function ImageComponent(props: any) {
+    // console.log('ImageComponent:', props)
+    return <Image {...props} alt='' style={{width:"100%"}} height={500} width={500} />
 }
   
 
