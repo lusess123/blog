@@ -21,14 +21,14 @@ export default function Home(props: any) {
         console.log('mdPath render:', mdPath)
         const md = fs.readFileSync(mdPath, 'utf8')
         // console.log('md:', md)
-        xd = md.replaceAll('https://cdn.nlark.com', '/api?url=https://cdn.nlark.com')
+        xd = md.replaceAll('https://cdn.nlark.com', '//:file.zyking.xyz/api?url=https://cdn.nlark.com')
     } else {
         xd = props?.params?.x
     }
     return (
         <div className='day-page'>
             <ReactMarkdown className="markdown-body"
-                // components={{"img": ImageComponent as any}}
+                components={{"img": ImageComponent as any}}
                 rehypePlugins={[rehypeRaw]}
                 remarkPlugins={[[remarkGfm, { singleTilde: false }]]}>
                 {xd}
