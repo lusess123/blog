@@ -25,7 +25,6 @@
     "remark-html": "^16.0.1",
     "remark-math": "^6.0.0",
     "remark-rehype": "^11.0.0",
-    "sharp": "^0.33.2",
     "socket.io-client": "^4.7.4",
     "unified": "^11.0.4"
   },
