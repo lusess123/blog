@@ -7,27 +7,33 @@ import {
 const MODEL_NAME = "gemini-pro";
 import { setGlobalDispatcher, ProxyAgent } from "undici"
 
-
-if (process.env.https_proxy) {
-    const dispatcher = new ProxyAgent({ uri: new URL(process.env.https_proxy!).toString() });
-    setGlobalDispatcher(dispatcher);
-    console.log("process.env.https_proxy", process.env.https_proxy)
-}
+let start = false
 let model: any, genAI: any
-if (process.env.API_KEY) {
-    genAI = new GoogleGenerativeAI(process.env.API_KEY);
-    model = genAI.getGenerativeModel({ model: MODEL_NAME });
-}
+
 
 
 
 // 异步函数GET来处理请求
 export async function GET(request: Request) {
+
     // 确保环境变量中有API_KEY
     if (!process.env.API_KEY) {
         console.error("API_KEY is not defined in the environment variables.");
         return new Response("Internal Server Error", { status: 500 });
     }
+    if(!start) {
+        if (process.env.https_proxy) {
+            const dispatcher = new ProxyAgent({ uri: new URL(process.env.https_proxy!).toString() });
+            setGlobalDispatcher(dispatcher);
+            console.log("process.env.https_proxy", process.env.https_proxy)
+        }
+        if (process.env.API_KEY) {
+            genAI = new GoogleGenerativeAI(process.env.API_KEY);
+            model = genAI.getGenerativeModel({ model: MODEL_NAME });
+        }
+        start = true
+    }
+
 
     try {
 
