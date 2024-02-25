@@ -26,8 +26,8 @@ export default function Home(props: any) {
         xd = props?.params?.x
     }
     return (
-        <div className='day-page'>
-            <ReactMarkdown className="markdown-body"
+        <div className='day-page w-full'>
+            <ReactMarkdown className="markdown-here-wrapper mx-auto max-w-[768px] min-w-[80%]"
                 components={{"img": ImageComponent as any}}
                 rehypePlugins={[rehypeRaw]}
                 remarkPlugins={[[remarkGfm, { singleTilde: false }]]}>
