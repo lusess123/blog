@@ -40,7 +40,7 @@ export default function Home(props: any) {
 function ImageComponent(props: any) {
     // console.log('ImageComponent:', props)
     
-    return <Image {...props}  priority  alt={props.src} style={{width:"100%"}} height={500} width={500} />
+    return <Image {...props}  priority className='mx-auto'  alt={props.src} style={{width:"auto"}} height={500} width={500} />
 }
   
 
