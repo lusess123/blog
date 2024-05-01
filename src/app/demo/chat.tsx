@@ -162,7 +162,7 @@ export default function Chat() {
     return <div className='page-demo-chat flex flex-col h-screen'>
         <div className='element'></div>
         <div className='flex-1 overflow-auto pb-[40px] pt-[12px] h-[100%]'>
-            <ul className="chat-thread h-[100%] whitespace-normal " ref={ref => elem.current = ref}>
+            <ul className="chat-thread h-[100%] whitespace-normal " ref={ref => elem.current = ref as any}>
                 {
                     history.map((item : any) => {
                         const name = (item[2])
@@ -189,7 +189,7 @@ export default function Chat() {
                         if (event.key === 'Enter' && !event.target["composing"]) {
                             send()
                         }
-                    }} ref={ref => textRef.current = ref} className="chat-window-message" name="chat-window-message" type="text" autoComplete="off" autoFocus />
+                    }} ref={ref => textRef.current = ref as any} className="chat-window-message" name="chat-window-message" type="text" autoComplete="off" autoFocus />
                 <button onClick={send} className="bg-zeroai-green  text-white font-bold py-2 px-4 rounded shadow-lg">
                     Send
                 </button>
