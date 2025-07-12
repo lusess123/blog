@@ -17,11 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>{children}
-      <footer style={{textAlign:"center"}} >
-        <span style={{textAlign:"center"}}>
-        <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备20018760号-1</a>
-</span>
-    </footer>
+      <footer className="cyber-footer">
+        <div className="footer-content">
+          <a href="https://beian.miit.gov.cn/" target="_blank" className="footer-link">
+            浙ICP备20018760号-1
+          </a>
+          <div className="footer-glow"></div>
+        </div>
+      </footer>
       </body>
     </html>
   )
