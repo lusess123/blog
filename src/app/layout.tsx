@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { ThemeProvider } from '../contexts/ThemeContext'
+import ThemeWrapper from '../components/ThemeWrapper'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,15 +18,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}
-      <footer className="cyber-footer">
-        <div className="footer-content">
-          <a href="https://beian.miit.gov.cn/" target="_blank" className="footer-link">
-            浙ICP备20018760号-1
-          </a>
-          <div className="footer-glow"></div>
-        </div>
-      </footer>
+      <body className={inter.className}>
+        <ThemeProvider>
+          <ThemeWrapper>
+            {children}
+            <footer className="cyber-footer">
+              <div className="footer-content">
+                <a href="https://beian.miit.gov.cn/" target="_blank" className="footer-link">
+                  浙ICP备20018760号-1
+                </a>
+                <div className="footer-glow"></div>
+              </div>
+            </footer>
+          </ThemeWrapper>
+        </ThemeProvider>
       </body>
     </html>
   )
