@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import './ThemeSelector.scss'
 
-export type Theme = 'cyberpunk' | 'gothic' | 'mediterranean' | 'zen' | 'miyazaki' | 'starry'
+export type Theme = 'light' | 'dark' | 'warm' | 'cool'
 
 interface ThemeOption {
   id: Theme
@@ -14,40 +14,28 @@ interface ThemeOption {
 
 const themes: ThemeOption[] = [
   {
-    id: 'cyberpunk',
-    name: '赛博朋克',
-    icon: '🌐',
-    description: '未来科技感的霓虹世界'
+    id: 'light',
+    name: '浅色',
+    icon: '☀️',
+    description: '简洁明亮的现代设计'
   },
   {
-    id: 'gothic',
-    name: '哥特风格',
-    icon: '🏰',
-    description: '神秘优雅的黑暗美学'
+    id: 'dark',
+    name: '深色',
+    icon: '🌙',
+    description: '护眼舒适的暗色主题'
   },
   {
-    id: 'mediterranean',
-    name: '地中海田园',
-    icon: '🌊',
-    description: '温暖惬意的自然风光'
+    id: 'warm',
+    name: '暖色',
+    icon: '🔥',
+    description: '温暖舒适的橘色调'
   },
   {
-    id: 'zen',
-    name: '极简禅意',
-    icon: '🧘',
-    description: '宁静致远的简约美学'
-  },
-  {
-    id: 'miyazaki',
-    name: '宫崎骏',
-    icon: '🌸',
-    description: '童话般的梦幻世界'
-  },
-  {
-    id: 'starry',
-    name: '星空',
-    icon: '🌌',
-    description: '浩瀚宇宙的深邃美丽'
+    id: 'cool',
+    name: '冷色',
+    icon: '❄️',
+    description: '清爽自然的蓝绿调'
   }
 ]
 

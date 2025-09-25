@@ -24,32 +24,31 @@ function convertDate(input: string) {
 export default async function Home() {
   const list = await getList()
   return (
-    <div>
-       <div className='text-center mt-9   page-title text-3xl font-bold '>Zyking’S 每日阅读</div>
+    <div className="container">
+      <h1 className="page-title">Zyking'S 每日阅读</h1>
 
-    <section className="info-list gray">
-     
-      <ul className="news-list">
-        {
-          list.sort((a, b) => parseInt(b.day) - parseInt(a.day)).map((item) => {
-            return <li key={item.day} className="determine-hover enable-hover" data-type="article">
-              <a className="history-link" title="Article One Headline" href="#">
-                <div className="canvas-background">
-                  <div className="stalker-wrap"></div>
-                </div>
-                <div className="gradient-hover gradient-1"></div>
-                <div className="constrain">
-                  <span className="date">{convertDate(item.day)}</span>
-                 
-                  <p> <Link href={`/${item.day}`}>{formatDateString(item.day).replace(".md", "")}</Link></p>
-                </div>
-                <div className="gradient-hover gradient-2"></div>
-              </a>
-            </li>
-          })
-        }
-      </ul>
-    </section>
+      <div className="blog-list">
+        {list.sort((a, b) => parseInt(b.day) - parseInt(a.day)).map((item, index) => {
+          const isRecent = index < 3; // Mark first 3 posts as recent/featured
+          return (
+            <article key={item.day} className={`blog-card ${isRecent ? 'featured' : ''}`}>
+              <div className="blog-date">{convertDate(item.day)}</div>
+              <Link href={`/${item.day}`} className="blog-title">
+                {formatDateString(item.day).replace(".md", "")}
+              </Link>
+              <div className="read-more">阅读文章</div>
+            </article>
+          )
+        })}
+
+        {list.length === 0 && (
+          <div className="empty-state">
+            <div className="empty-icon">📝</div>
+            <div className="empty-title">暂无文章</div>
+            <div className="empty-description">还没有发布任何文章，请稍后再来查看。</div>
+          </div>
+        )}
+      </div>
     </div>
   )
 

@@ -1,16 +1,12 @@
 import Image from 'next/image'
-// 提供插入md文档模板标签
-import ReactMarkdown from 'react-markdown';
-// 支持gfm语法 简单理解就是平时书写md文档的语法
-import remarkGfm from 'remark-gfm';
-// md文档所需要的样式，例如表格的线条等等
-// import 'github-markdown-css';
+import Link from 'next/link'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import fs from 'fs'
 import path, { join } from 'path'
-import { getList, formatDateString   } from "../../util/file-util"
+import { getList, formatDateString } from "../../util/file-util"
 import './day.scss'
-import parse from 'html-react-parser';
 
 export default function Home(props: any) {
     // console.log('props:', props)
@@ -26,11 +22,16 @@ export default function Home(props: any) {
         xd = props?.params?.x
     }
     return (
-        <div className='day-page w-full'>
-            <ReactMarkdown className="markdown-here-wrapper mx-auto max-w-[768px] min-w-[80%]"
+        <div className="article-container">
+            <Link href="/" className="back-link">
+                返回首页
+            </Link>
+            <ReactMarkdown
+                className="markdown-here-wrapper"
                 components={{"img": ImageComponent as any}}
                 rehypePlugins={[rehypeRaw]}
-                remarkPlugins={[[remarkGfm, { singleTilde: false }]]}>
+                remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
+            >
                 {xd}
             </ReactMarkdown>
         </div>

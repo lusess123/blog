@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react'
 
-export type Theme = 'cyberpunk' | 'gothic' | 'mediterranean' | 'zen' | 'miyazaki' | 'starry'
+export type Theme = 'light' | 'dark' | 'warm' | 'cool'
 
 interface ThemeContextType {
   theme: Theme
@@ -24,13 +24,13 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setThemeState] = useState<Theme>('cyberpunk')
+  const [theme, setThemeState] = useState<Theme>('light')
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     // Get theme from localStorage on mount
     const savedTheme = localStorage.getItem('blog-theme') as Theme
-    if (savedTheme && ['cyberpunk', 'gothic', 'mediterranean', 'zen', 'miyazaki', 'starry'].includes(savedTheme)) {
+    if (savedTheme && ['light', 'dark', 'warm', 'cool'].includes(savedTheme)) {
       setThemeState(savedTheme)
     }
     setMounted(true)

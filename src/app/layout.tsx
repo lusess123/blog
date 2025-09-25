@@ -22,13 +22,10 @@ export default function RootLayout({
         <ThemeProvider>
           <ThemeWrapper>
             {children}
-            <footer className="cyber-footer">
-              <div className="footer-content">
-                <a href="https://beian.miit.gov.cn/" target="_blank" className="footer-link">
-                  浙ICP备20018760号-1
-                </a>
-                <div className="footer-glow"></div>
-              </div>
+            <footer className="footer">
+              <a href="https://beian.miit.gov.cn/" target="_blank" className="footer-link">
+                浙ICP备20018760号-1
+              </a>
             </footer>
           </ThemeWrapper>
         </ThemeProvider>
