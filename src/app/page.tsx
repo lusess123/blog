@@ -25,7 +25,7 @@ export default async function Home() {
   const list = await getList()
   return (
     <div className="container">
-      <h1 className="page-title">Zyking'S 每日阅读</h1>
+      <h1 className="page-title">Zyking<span> </span>S 每日阅读</h1>
 
       <div className="blog-list">
         {list.sort((a, b) => parseInt(b.day) - parseInt(a.day)).map((item, index) => {
