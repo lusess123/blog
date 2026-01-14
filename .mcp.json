@@ -1,0 +1,76 @@
+{
+  "mcpServers": {
+    "antd-docs": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "mcpdoc",
+        "mcpdoc",
+        "--urls",
+        "AntDesign:https://ant.design/llms-full.txt",
+        "--transport",
+        "stdio"
+      ],
+      "env": {}
+    },
+    "figma-desktop": {
+      "type": "http",
+      "url": "http://127.0.0.1:3845/mcp"
+    },
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
+    },
+    "livekit-docs": {
+      "type": "http",
+      "url": "https://docs.livekit.io/mcp"
+    },
+    "nano-banana": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "nano-banana-mcp"
+      ],
+      "env": {
+        "GEMINI_API_KEY": "${GEMINI_API_KEY}"
+      }
+    },
+    "unsplash": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "unsplash-mcp-server"
+      ],
+      "env": {
+        "UNSPLASH_ACCESS_KEY": "${UNSPLASH_ACCESS_KEY}"
+      }
+    },
+    "excalidraw": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@cmd8/excalidraw-mcp"
+      ]
+    },
+    "plantuml": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@brainstack/plantuml-mcp"
+      ]
+    },
+    "mermaid": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-mermaid"
+      ]
+    }
+  }
+}
